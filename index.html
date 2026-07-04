@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#F5F1EC">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Melody">
+  <meta name="description" content="Your personal offline-first music player. Every song tells a story.">
+  <title>Melody</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+  <link rel="apple-touch-icon" href="assets/images/logo.svg">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/player.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div class="app-container">
+    <div id="page-first-launch" class="page hidden"></div>
+    <div id="page-greeting" class="page hidden"></div>
+    <div id="page-home" class="page hidden"></div>
+    <div id="page-library" class="page hidden"></div>
+    <div id="page-search" class="page hidden"></div>
+    <div id="page-favorites" class="page hidden"></div>
+    <div id="page-playlists" class="page hidden"></div>
+    <div id="page-queue" class="page hidden"></div>
+    <div id="page-settings" class="page hidden"></div>
+    <div id="page-equalizer" class="page hidden"></div>
+
+    <nav class="bottom-nav" id="bottom-nav">
+      <a class="bottom-nav__item active" href="#home" data-page="home">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span class="bottom-nav__label">Home</span>
+      </a>
+      <a class="bottom-nav__item" href="#search" data-page="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <span class="bottom-nav__label">Search</span>
+      </a>
+      <a class="bottom-nav__item" href="#library" data-page="library">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+        <span class="bottom-nav__label">Library</span>
+      </a>
+      <a class="bottom-nav__item" href="#settings" data-page="settings">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.67 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.67a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        <span class="bottom-nav__label">Settings</span>
+      </a>
+    </nav>
+  </div>
+
+  <!-- Core -->
+  <script src="js/core/state.js"></script>
+  <script src="js/core/storage.js"></script>
+  <script src="js/core/router.js"></script>
+  <script src="js/core/database.js"></script>
+
+  <!-- Utils -->
+  <script src="js/utils/helpers.js"></script>
+  <script src="js/utils/timeFormatter.js"></script>
+  <script src="js/utils/filenameCleaner.js"></script>
+  <script src="js/utils/duplicateDetector.js"></script>
+  <script src="js/utils/animations.js"></script>
+
+  <!-- Services -->
+  <script src="js/services/audio.js"></script>
+  <script src="js/services/metadata.js"></script>
+  <script src="js/services/import.js"></script>
+  <script src="js/services/mediaSession.js"></script>
+  <script src="js/services/search.js"></script>
+  <script src="js/services/coverArt.js"></script>
+  <script src="js/services/lyrics.js"></script>
+  <script src="js/services/equalizer.js"></script>
+
+  <!-- Components -->
+  <script src="js/components/card.js"></script>
+  <script src="js/components/modal.js"></script>
+  <script src="js/components/toast.js"></script>
+  <script src="js/components/slider.js"></script>
+  <script src="js/components/toggle.js"></script>
+
+  <!-- UI -->
+  <script src="js/ui/firstLaunch.js"></script>
+  <script src="js/ui/greeting.js"></script>
+  <script src="js/ui/home.js"></script>
+  <script src="js/ui/player.js"></script>
+  <script src="js/ui/miniPlayer.js"></script>
+  <script src="js/ui/library.js"></script>
+  <script src="js/ui/search.js"></script>
+  <script src="js/ui/settings.js"></script>
+  <script src="js/ui/playlist.js"></script>
+  <script src="js/ui/favorites.js"></script>
+  <script src="js/ui/queue.js"></script>
+  <script src="js/ui/equalizer.js"></script>
+
+  <!-- App Bootstrap -->
+  <script src="js/core/app.js"></script>
+</body>
+</html>
