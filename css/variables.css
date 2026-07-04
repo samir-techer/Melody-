@@ -1,0 +1,119 @@
+/**
+ * Melody PWA - CSS Variables / Design System
+ * Single source of truth for colors, typography, spacing, shadows, radii
+ * @version 1.0.0
+ */
+
+:root {
+  /* ═══════════════════════════════════════
+     COLOR PALETTE
+     ═══════════════════════════════════════ */
+  --color-bg: #F5F1EC;
+  --color-bg-secondary: #EAE3DB;
+  --color-card: #FFFFFF;
+  --color-text-primary: #1F1F1F;
+  --color-text-secondary: #7A7A7A;
+  --color-accent: #232323;
+  --color-accent-hover: #3A3A3A;
+  --color-border: rgba(31, 31, 31, 0.08);
+  --color-border-hover: rgba(31, 31, 31, 0.15);
+  --color-overlay: rgba(31, 31, 31, 0.4);
+  --color-success: #4A7C59;
+  --color-warning: #C9A227;
+  --color-danger: #C44D56;
+  --color-favorite: #C44D56;
+
+  /* Vinyl-inspired dark mode (future) */
+  --color-vinyl-black: #232323;
+  --color-vinyl-groove: #3A3A3A;
+  --color-warm-ivory: #F5F1EC;
+
+  /* ═══════════════════════════════════════
+     TYPOGRAPHY
+     ═══════════════════════════════════════ */
+  --font-primary: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'SF Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
+
+  --text-xs: 0.75rem;      /* 12px */
+  --text-sm: 0.875rem;     /* 14px */
+  --text-base: 1rem;       /* 16px */
+  --text-md: 1.125rem;     /* 18px */
+  --text-lg: 1.25rem;      /* 20px */
+  --text-xl: 1.5rem;       /* 24px */
+  --text-2xl: 1.75rem;     /* 28px */
+  --text-3xl: 2rem;        /* 32px */
+  --text-4xl: 2.5rem;      /* 40px */
+
+  --font-light: 300;
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+
+  /* ═══════════════════════════════════════
+     SPACING SCALE
+     ═══════════════════════════════════════ */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+
+  /* ═══════════════════════════════════════
+     BORDER RADIUS
+     ═══════════════════════════════════════ */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 24px;
+  --radius-3xl: 32px;
+  --radius-full: 9999px;
+
+  /* ═══════════════════════════════════════
+     SHADOWS (Subtle only)
+     ═══════════════════════════════════════ */
+  --shadow-sm: 0 1px 2px rgba(31, 31, 31, 0.04);
+  --shadow-md: 0 2px 8px rgba(31, 31, 31, 0.06);
+  --shadow-lg: 0 4px 16px rgba(31, 31, 31, 0.08);
+  --shadow-xl: 0 8px 32px rgba(31, 31, 31, 0.1);
+  --shadow-inner: inset 0 1px 2px rgba(31, 31, 31, 0.04);
+
+  /* ═══════════════════════════════════════
+     TRANSITIONS
+     ═══════════════════════════════════════ */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-spring: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ═══════════════════════════════════════
+     Z-INDEX SCALE
+     ═══════════════════════════════════════ */
+  --z-base: 0;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-modal: 300;
+  --z-toast: 400;
+  --z-player: 500;
+  --z-overlay: 600;
+
+  /* ═══════════════════════════════════════
+     LAYOUT
+     ═══════════════════════════════════════ */
+  --max-width: 480px;
+  --header-height: 56px;
+  --bottom-nav-height: 64px;
+  --mini-player-height: 72px;
+  --safe-area-top: env(safe-area-inset-top, 0px);
+  --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-area-left: env(safe-area-inset-left, 0px);
+  --safe-area-right: env(safe-area-inset-right, 0px);
+}

@@ -1,0 +1,281 @@
+/**
+ * Melody PWA - Responsive Styles
+ * Mobile-first with tablet/desktop enhancements
+ * @version 1.0.0
+ */
+
+/* ═══════════════════════════════════════
+   TABLET (768px+)
+   ═══════════════════════════════════════ */
+
+@media (min-width: 768px) {
+  :root {
+    --max-width: 600px;
+  }
+
+  .app-container {
+    box-shadow: 0 0 60px rgba(31, 31, 31, 0.06);
+  }
+
+  .page {
+    padding: var(--space-6);
+    padding-top: calc(var(--header-height) + var(--space-6) + var(--safe-area-top));
+  }
+
+  .home__greeting {
+    font-size: var(--text-3xl);
+  }
+
+  .quick-actions {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .recent-card,
+  .album-card,
+  .playlist-card {
+    width: 180px;
+  }
+
+  .artist-card {
+    width: 120px;
+  }
+
+  .artist-card .card__cover {
+    width: 120px;
+    height: 120px;
+  }
+
+  .playlists__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .vinyl-container {
+    width: min(50vw, 380px);
+    height: min(50vw, 380px);
+  }
+
+  .player__title {
+    font-size: var(--text-2xl);
+  }
+
+  .player__controls {
+    gap: var(--space-6);
+  }
+
+  .player__control-btn--large {
+    width: 80px;
+    height: 80px;
+  }
+
+  .player__control-btn--large svg {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* ═══════════════════════════════════════
+   DESKTOP (1024px+)
+   ═══════════════════════════════════════ */
+
+@media (min-width: 1024px) {
+  :root {
+    --max-width: 720px;
+  }
+
+  .app-container {
+    border-radius: var(--radius-2xl);
+    margin: var(--space-4) auto;
+    min-height: calc(100dvh - var(--space-8));
+    max-height: calc(100dvh - var(--space-8));
+    overflow: hidden;
+  }
+
+  .page {
+    padding: var(--space-8);
+    padding-top: calc(var(--header-height) + var(--space-8) + var(--safe-area-top));
+    padding-bottom: calc(var(--bottom-nav-height) + var(--space-8) + var(--safe-area-bottom));
+  }
+
+  .home__greeting {
+    font-size: var(--text-4xl);
+  }
+
+  .quick-actions {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .recent-card,
+  .album-card,
+  .playlist-card {
+    width: 200px;
+  }
+
+  .artist-card {
+    width: 140px;
+  }
+
+  .artist-card .card__cover {
+    width: 140px;
+    height: 140px;
+  }
+
+  .playlists__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .vinyl-container {
+    width: 380px;
+    height: 380px;
+  }
+
+  .player__title {
+    font-size: var(--text-3xl);
+  }
+
+  .player__artist {
+    font-size: var(--text-lg);
+  }
+
+  .modal {
+    bottom: auto;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    transform: translate(-50%, -50%) scale(0.95);
+    border-radius: var(--radius-2xl);
+    max-height: 80vh;
+    width: 90%;
+    max-width: 480px;
+    padding-bottom: var(--space-6);
+  }
+
+  .modal.active {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .modal__handle {
+    display: none;
+  }
+
+  .modal-overlay.active + .modal,
+  .modal-overlay.active ~ .modal {
+    /* handled by JS */
+  }
+}
+
+/* ═══════════════════════════════════════
+   LANDSCAPE MOBILE
+   ═══════════════════════════════════════ */
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .player__artwork {
+    flex: 0 0 auto;
+    padding: var(--space-3);
+  }
+
+  .vinyl-container {
+    width: 160px;
+    height: 160px;
+  }
+
+  .player__info {
+    padding: var(--space-3) var(--space-6);
+  }
+
+  .player__title {
+    font-size: var(--text-lg);
+  }
+
+  .player__controls {
+    padding: var(--space-2) var(--space-6);
+  }
+
+  .player__control-btn--large {
+    width: 56px;
+    height: 56px;
+  }
+
+  .player__control-btn--large svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .player__secondary-controls {
+    padding-bottom: calc(var(--space-4) + var(--safe-area-bottom));
+  }
+
+  .first-launch__logo {
+    width: 80px;
+    height: 80px;
+    margin-bottom: var(--space-4);
+  }
+
+  .first-launch__title {
+    font-size: var(--text-xl);
+  }
+
+  .greeting__poem {
+    font-size: var(--text-sm);
+    line-height: 1.8;
+    margin-bottom: var(--space-8);
+  }
+}
+
+/* ═══════════════════════════════════════
+   DARK MODE SUPPORT (Future)
+   ═══════════════════════════════════════ */
+
+@media (prefers-color-scheme: dark) {
+  /* Uncomment when dark mode is implemented */
+  /*
+  :root {
+    --color-bg: #1A1A1A;
+    --color-bg-secondary: #252525;
+    --color-card: #2A2A2A;
+    --color-text-primary: #F5F1EC;
+    --color-text-secondary: #9A9A9A;
+    --color-accent: #F5F1EC;
+    --color-border: rgba(245, 241, 236, 0.08);
+    --color-border-hover: rgba(245, 241, 236, 0.15);
+  }
+  */
+}
+
+/* ═══════════════════════════════════════
+   HIGH CONTRAST MODE
+   ═══════════════════════════════════════ */
+
+@media (prefers-contrast: high) {
+  :root {
+    --color-text-primary: #000000;
+    --color-text-secondary: #555555;
+    --color-border: rgba(0, 0, 0, 0.2);
+  }
+
+  .btn--primary {
+    border: 2px solid currentColor;
+  }
+
+  .input {
+    border-width: 2px;
+  }
+}
+
+/* ═══════════════════════════════════════
+   PRINT STYLES
+   ═══════════════════════════════════════ */
+
+@media print {
+  .app-container {
+    max-width: 100%;
+    box-shadow: none;
+  }
+
+  .bottom-nav,
+  .mini-player,
+  .player,
+  .modal-overlay,
+  .modal {
+    display: none !important;
+  }
+}
